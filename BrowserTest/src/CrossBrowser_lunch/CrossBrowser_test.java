@@ -5,6 +5,7 @@ import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -18,6 +19,8 @@ public class CrossBrowser_test {
 		driver.get("https://www.google.com/");
 		driver.manage().window().maximize();
 		assertEquals(driver.getTitle(),"Google");
+		driver.findElement(By.xpath(".//*[@id='gs_htif0']")).sendKeys("World cup 2018");
+		driver.findElement(By.xpath(".//*[@id='tsf']/div[2]/div[3]/center/input[1]")).click();
 		driver.quit();
 		
 	}
