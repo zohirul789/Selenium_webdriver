@@ -15,17 +15,23 @@ public class ChromeBrowser_lunch {
 		driver= new ChromeDriver();
 	}
 
-	@After
-	public void tearDown() throws Exception {
-		driver.quit();
-	}
+
 
 	@Test
 	public void test() {
+	
 		driver.get("https://www.google.com/");
 		assertEquals(driver.getTitle(),"Google");
 		driver.quit();
 		
+	 }
+	
+	
+	
+	@After
+	public void tearDown() throws Exception {
+		driver.quit();
 	}
-
 }
+
+
